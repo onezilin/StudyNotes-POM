@@ -10,6 +10,7 @@
     <modules>
         <module>studynotes-commons</module>
         <module>studynotes-javase</module>
+        <module>studynotes-spring</module>
     </modules>
     <name>pom</name>
     <description>Demo project for Java</description>
