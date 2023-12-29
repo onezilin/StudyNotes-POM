@@ -1,0 +1,10 @@
+server:
+  port: 8090
+
+beanCondition:
+  enabled: true
+
+person:
+  dogs:
+    husky: '{"name":"erha","age":3}'
+    corgi: '{"name":"pipi","age":4}'

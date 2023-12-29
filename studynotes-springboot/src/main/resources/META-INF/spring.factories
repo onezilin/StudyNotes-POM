@@ -1,0 +1,7 @@
+# Application Context Initializers
+org.springframework.boot.BootstrapRegistryInitializer=\
+com.studynotes.demo06_factories.Demo02_BootstrapRegistryInitializer
+# Application Listeners
+org.springframework.context.ApplicationListener=\
+com.studynotes.demo06_factories.Demo03_ApplicationListener,\
+com.studynotes.demo06_factories.Demo04_ApplicationListener

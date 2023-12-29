@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+       default-autowire="byType">
+
+    <bean id="customBean" class="com.studynotes.bean.CustomBean"/>
+
+    <!-- ================================================== -->
+
+    <bean id="autoWiredBean1" name="autoWiredBean1" class="com.studynotes.demo03_ignore.Demo01_AutoWiredBean"/>
+
+    <bean id="autoWiredBean2" name="autoWiredBean2" class="com.studynotes.demo03_ignore.Demo02_AutoWiredBean"/>
+
+    <bean id="autoWiredBeanAware" name="autoWiredBeanAware"
+          class="com.studynotes.demo03_ignore.Demo04_AutoWiredBeanAwareImpl"/>
+
+    <bean id="ignoreBeanFactoryPostProcessor" name="ignoreBeanFactoryPostProcessor"
+          class="com.studynotes.demo03_ignore.Demo05_IgnoreBeanFactoryPostProcessor"/>
+</beans>
