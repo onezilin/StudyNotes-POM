@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>studynotes-commons</module>
+        <module>studynotes-javase</module>
     </modules>
     <name>pom</name>
     <description>Demo project for Java</description>
