@@ -1,0 +1,28 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: studynotes-quartz
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://192.168.190.134:3306/quartz?useUnicode=true&characterEncoding=utf-8&useSSL=false # TODO: 自定义 MySQL 地址
+    username: root
+    password: W110514
+  quartz:
+    scheduler-name: MyScheduler # 调度器名称
+    job-store-type: jdbc # 持久化到数据库，数据库脚本在 `org.quartz.impl.jdbcjobstore` 路径下
+    overwrite-existing-jobs: true # 覆盖已存在的任务
+    wait-for-jobs-to-complete-on-shutdown: true # 等待所有任务执行完毕再关闭
+    properties: # 提供 properties 属性，用于覆盖 quartz.properties 中的属性值
+      org:
+        quartz:
+          threadPool:
+            threadCount: 25 # 线程池大小
+            threadNamePrefix: quartz-thread- # 线程名称前缀
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  # TODO: 自定义
+  type-aliases-package: com.atguigu.springcloud.entities

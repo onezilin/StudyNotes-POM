@@ -13,6 +13,7 @@
         <module>studynotes-spring</module>
         <module>studynotes-springboot</module>
         <module>studynotes-zookeeper</module>
+        <module>studynotes-quartz</module>
     </modules>
     <name>pom</name>
     <description>Demo project for Java</description>
