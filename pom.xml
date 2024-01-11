@@ -14,6 +14,7 @@
         <module>studynotes-springboot</module>
         <module>studynotes-zookeeper</module>
         <module>studynotes-quartz</module>
+        <module>studynotes-designpatterns</module>
     </modules>
     <name>pom</name>
     <description>Demo project for Java</description>
