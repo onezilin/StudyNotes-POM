@@ -12,4 +12,8 @@ public interface CommonConstants {
     String LINUX_HOST = "192.168.190.134";
 
     String ZOOKEEPER_HOST = LINUX_HOST + ":2181" + "," + LINUX_HOST + ":2182" + "," + LINUX_HOST + ":2183";
+
+    int REDIS_PORT = 6379;
+
+    int[] REDIS_CLUSTER_PORTS = {6379, 6380, 6381, 6382, 6383, 6384};
 }
