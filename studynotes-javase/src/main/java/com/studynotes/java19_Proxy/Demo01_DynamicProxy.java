@@ -1,4 +1,4 @@
-package com.studynotes.java19_Proxy;
+package com.studynotes.java19_proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

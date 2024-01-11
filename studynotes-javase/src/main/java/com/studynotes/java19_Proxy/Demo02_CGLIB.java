@@ -1,4 +1,4 @@
-package com.studynotes.java19_Proxy;
+package com.studynotes.java19_proxy;
 
 
 import org.springframework.cglib.proxy.Enhancer;
