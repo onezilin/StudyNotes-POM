@@ -16,4 +16,6 @@ public interface CommonConstants {
     int REDIS_PORT = 6379;
 
     int[] REDIS_CLUSTER_PORTS = {6379, 6380, 6381, 6382, 6383, 6384};
+
+    String KAFKA_BROKER_LIST = LINUX_HOST + ":9092" + "," + LINUX_HOST + ":9093" + "," + LINUX_HOST + ":9094";
 }
