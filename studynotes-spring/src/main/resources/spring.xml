@@ -12,11 +12,14 @@
             http://www.springframework.org/schema/tx
             http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
+    <!-- 导入 SpringMVC 配置文件 -->
+    <import resource="spring-mvc.xml" />
+
     <!-- 扫描service、dao组件 -->
     <context:component-scan base-package="com.studynotes"/>
-    <!-- 分解配置 jdbc.properites -->
-    <context:property-placeholder location="classpath:jdbc.properties"/>
 
+    <!-- 解析配置 jdbc.properites -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
     <!-- 数据源Druid -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="${jdbc.driverClassName}"/>
