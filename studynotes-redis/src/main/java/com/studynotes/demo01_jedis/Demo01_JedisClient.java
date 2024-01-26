@@ -16,7 +16,8 @@ public class Demo01_JedisClient {
 
     static {
         // 使用配置创建连接池
-        try (JedisPool pool = new JedisPool(JedisUtil.CONFIG, CommonConstants.LINUX_HOST, CommonConstants.REDIS_PORT)) {
+        try (JedisPool pool = new JedisPool(JedisUtil.CONFIG, CommonConstants.LINUX_HOST,
+                CommonConstants.REDIS_CLUSTER_PORTS[0])) {
             // 从连接池中获取单个连接
             jedis = pool.getResource();
             if (StringUtils.hasText(JedisUtil.AUTH)) {
