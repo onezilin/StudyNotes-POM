@@ -20,7 +20,7 @@
 
     <!-- 解析配置 jdbc.properites -->
     <context:property-placeholder location="classpath:jdbc.properties"/>
-    <!-- 数据源Druid -->
+    <!-- Druid 数据源 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="${jdbc.driverClassName}"/>
         <property name="url" value="${jdbc.url}"/>
@@ -28,16 +28,19 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
 
-    <!-- sessionFactory 将spring和mybatis整合 -->
+    <!-- SqlSessionFactoryBean 将 Spring 和 Mybatis 整合 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="classpath:spring-mybatis.xml"/>
-        <property name="mapperLocations" value="classpath:/mapper/*Mapper.xml"/>
+        <!-- 加载 MyBatis 配置文件 -->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <!-- 加载 Mapper 映射文件 -->
+        <property name="mapperLocations" value="classpath:/mapper/*.xml"/>
     </bean>
 
-    <!--配置MapperScanner-->
+    <!-- 配置 MapperScanner -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.studynotes.spring.mybatis"/>
+        <!-- 扫描包路径，生成包内所有接口的代理对象，并且注册到 Spring 容器 -->
+        <property name="basePackage" value="com.studynotes.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
