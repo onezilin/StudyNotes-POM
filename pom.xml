@@ -18,6 +18,7 @@
         <module>studynotes-redis</module>
         <module>studynotes-kafka</module>
         <module>studynotes-springmvc</module>
+        <module>studynotes-mybatis</module>
     </modules>
     <name>pom</name>
     <description>Demo project for Java</description>

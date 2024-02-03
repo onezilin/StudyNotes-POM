@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- com.studynotes.demo04_config 包中使用 -->
+<configuration>
+    <settings>
+        <!-- 自动映射，自动将结果集绑定 POJO 类，PARTIAL 只会自动映射没有定义嵌套结果映射的字段，即八种基本类型 -->
+        <setting name="autoMappingBehavior" value="PARTIAL"/>
+        <!-- 延迟加载 -->
+        <!-- <setting name="lazyLoadingEnabled" value="true"/> -->
+        <!-- 关闭按层级延迟加载 -->
+        <!-- <setting name="aggressiveLazyLoading" value="false"/> -->
+    </settings>
+
+    <!-- 为 Java 类设置别名 -->
+    <typeAliases>
+        <!-- 第一种方式：为指定 Java 类设置别名 -->
+        <typeAlias type="com.studynotes.demo04_config.entity.User" alias="user"/>
+        <!-- 第二种方式：扫描指定包下被 @Alias 注解的 Java 类 -->
+        <package name="com.studynotes.demo04_config.entity"/>
+    </typeAliases>
+
+    <!-- 添加自定义类型处理器 -->
+    <typeHandlers>
+        <!-- 处理 varchar 和 String 之间的转换 -->
+        <typeHandler handler="com.studynotes.demo04_config.Demo03_TypeHandler"/>
+    </typeHandlers>
+
+    <!-- MySQL 数据库连接配置 -->
+    <environments default="development">
+        <environment id="development">
+            <!-- 使用 JDBC 事务管理 -->
+            <transactionManager type="JDBC"/>
+            <!-- 数据库连接池 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url"
+                          value="jdbc:mysql://192.168.190.134:3306/study_notes?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai&amp;autoReconnect=true"/>
+                <property name="username" value="root"/>
+                <property name="password" value="W110514"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 加载 Mapper 映射文件 -->
+    <mappers>
+        <!-- 加载单个 XML 映射文件，XML 配置文件和 Java 接口放在同一个 package 中，或者使用注解方式 -->
+        <!-- <mapper class="com.studynotes.demo04_config.dao.UserDao"/> -->
+        <package name="com.studynotes.demo04_config.dao"/>
+    </mappers>
+</configuration>

@@ -22,8 +22,8 @@ public interface CommonConstants {
     String KAFKA_BROKER_LIST = LINUX_HOST + ":9092" + "," + LINUX_HOST + ":9093" + "," + LINUX_HOST + ":9094";
 
     // MySQL 配置信息
-    String MYSQL_DRIVER = "com.mysql.jdbc.Driver";
-    String MYSQL_URL = "jdbc:mysql://" + LINUX_HOST + ":3306/db2019?useUnicode=true&characterEncoding=utf8&useSSL=false";
+    String MYSQL_DRIVER = "org.gjt.mm.mysql.Driver";
+    String MYSQL_URL = "jdbc:mysql://" + LINUX_HOST + ":3306/study_notes?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&autoReconnect=true";
     String MYSQL_USERNAME = "root";
-    String MySQL_PASSWORD = "W110514";
+    String MYSQL_PASSWORD = "W110514";
 }

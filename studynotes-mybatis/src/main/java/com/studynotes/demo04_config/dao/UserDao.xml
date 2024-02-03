@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.studynotes.demo04_config.dao.UserDao">
+
+    <!-- <cache/> -->
+
+    <!-- user 为 com.studynotes.demo04_config.entity.User 别名 -->
+    <resultMap type="user" id="UserMap">
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <!-- 使用自定义类型处理器，处理 varchar 和 String 的转换 -->
+        <result property="userName" column="user_name" typeHandler="com.studynotes.demo04_config.Demo03_TypeHandler"/>
+        <result property="age" column="age" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="UserMap">
+        select user_id,
+               user_name,
+               age
+        from study_notes.user
+        where user_id = #{userId}
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="userId" useGeneratedKeys="true">
+        insert into study_notes.user(user_name, age)
+        values (#{userName}, #{age})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update" flushCache="true">
+        update study_notes.user
+        <set>
+            <if test="userName != null and userName != ''">
+                user_name = #{userName},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+        </set>
+        where user_id = #{userId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from study_notes.user
+        where user_id = #{userId}
+    </delete>
+
+    <!-- 一对一级联查询：第一种方式，使用 RsultMap -->
+    <resultMap type="com.studynotes.demo04_config.entity.UserAndCard" id="UserAndCardMap1" extends="UserMap">
+        <!-- 使用 resultMap 属性引用 -->
+        <association property="card" resultMap="CardMap"/>
+    </resultMap>
+    <resultMap type="com.studynotes.demo04_config.entity.Card" id="CardMap">
+        <result property="cardId" column="card_id" jdbcType="INTEGER"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="number" column="number" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="queryUserAndCardById1" resultMap="UserAndCardMap1">
+        select u.user_id,
+               u.user_name,
+               u.age,
+               c.card_id,
+               c.user_id,
+               c.number
+        from study_notes.user u
+                 left join study_notes.card c on u.user_id = c.user_id
+        where u.user_id = #{userId}
+    </select>
+
+    <!-- 一对一级联查询：第二种方式，使用 select -->
+    <resultMap type="com.studynotes.demo04_config.entity.UserAndCard" id="UserAndCardMap2" extends="UserMap">
+        <!-- 对应 CardDao.xml 中的 queryCardByUserId -->
+        <association property="card" column="user_id"
+                     select="com.studynotes.demo04_config.dao.CardDao.queryCardByUserId"/>
+    </resultMap>
+    <select id="queryUserAndCardById2" resultMap="UserAndCardMap2">
+        select user_id,
+               user_name,
+               age
+        from study_notes.user
+        where user_id = #{userId}
+    </select>
+
+    <!-- 一对多级联查询：第一种方式，使用 RsultMap -->
+    <resultMap type="com.studynotes.demo04_config.entity.UserAndAccount" id="UserAndAccountMap1" extends="UserMap">
+        <!-- 使用 resultMap 属性引用 -->
+        <collection property="accounts" javaType="list" resultMap="AccountMap"/>
+    </resultMap>
+    <resultMap type="com.studynotes.demo04_config.entity.Account" id="AccountMap">
+        <result property="accountId" column="account_id" jdbcType="INTEGER"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="money" column="money" jdbcType="INTEGER"/>
+    </resultMap>
+    <select id="queryUserAndAccountById1" resultMap="UserAndAccountMap1">
+        select u.user_id,
+               u.user_name,
+               u.age,
+               a.account_id,
+               a.user_id,
+               a.money
+        from study_notes.user u
+                 left join study_notes.account a on u.user_id = a.user_id
+        where u.user_id = #{userId}
+    </select>
+
+    <!-- 一对多级联查询：第二种方式，使用 select -->
+    <resultMap type="com.studynotes.demo04_config.entity.UserAndAccount" id="UserAndAccountMap2" extends="UserMap">
+        <!-- 对应 AccountDao.xml 中的 queryAccountByUserId -->
+        <collection property="accounts" column="user_id"
+                    select="com.studynotes.demo04_config.dao.AccountDao.queryAccountByUserId"
+                    fetchType="eager"/>
+    </resultMap>
+    <select id="queryUserAndAccountById2" resultMap="UserAndAccountMap2">
+        select user_id,
+               user_name,
+               age
+        from study_notes.user
+        where user_id = #{userId}
+    </select>
+
+</mapper>
+
