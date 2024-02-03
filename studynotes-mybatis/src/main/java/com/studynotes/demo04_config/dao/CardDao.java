@@ -1,10 +1,6 @@
 package com.studynotes.demo04_config.dao;
 
 import com.studynotes.demo01_base.entity.Card;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.data.domain.Pageable;
-
-import java.util.List;
 
 /**
  * 身份证表(Card)表数据库访问层

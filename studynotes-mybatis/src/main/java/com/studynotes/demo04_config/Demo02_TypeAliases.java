@@ -4,7 +4,6 @@ import com.studynotes.demo04_config.dao.UserDao;
 import com.studynotes.demo04_config.entity.User;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.defaults.DefaultSqlSession;
 import org.junit.jupiter.api.Test;
 
 /**
