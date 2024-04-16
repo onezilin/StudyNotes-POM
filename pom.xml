@@ -19,6 +19,7 @@
         <module>studynotes-kafka</module>
         <module>studynotes-springmvc</module>
         <module>studynotes-mybatis</module>
+        <module>studynotes-algorithm</module>
     </modules>
     <name>pom</name>
     <description>Demo project for Java</description>
