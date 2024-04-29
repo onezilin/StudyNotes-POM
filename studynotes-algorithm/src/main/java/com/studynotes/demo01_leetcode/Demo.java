@@ -1,5 +1,7 @@
 package com.studynotes.demo01_leetcode;
 
+import com.studynotes.entity.ListNode;
+
 /**
  * Description:
  */
@@ -77,5 +79,37 @@ public class Demo {
      * {@link DemoArray_3#lengthOfLongestSubstring(String)} 无重复字符的最长子串
      */
     public void slidingWindow() {
+    }
+
+    /**
+     * Description: 【链表双指针技巧】是指在链表中使用两个指针分别指向某个位置，从而协同完成任务的技巧。
+     * <p>
+     * 链表中双指针技巧的主要应用场景有两类：
+     * 1、单链表只能从头到尾遍历，因此没有左右指针的概念。对于两个不同的链表，可以使用两个指针分别指向两个链表的头节点，从而协同完成任务。
+     * 2、快慢指针：主要解决链表中的环路检测、中点查找等问题。
+     * <p>
+     * {@link DemoList_21#mergeTwoLists(ListNode, ListNode)} 合并两个有序链表
+     * {@link DemoList_19#removeNthFromEnd(ListNode, int)} 删除链表的倒数第 N 个结点
+     * 快慢指针：
+     * {@link DemoList_876#middleNode(ListNode)} 链表的中间结点
+     * {@link DemoList_141#hasCycle(ListNode)} 环形链表
+     * {@link DemoList_142#detectCycle(ListNode)} 环形链表 II
+     * {@link DemoList_160#getIntersectionNode(ListNode, ListNode)} 相交链表
+     * {@link DemoList_206#reverseList(ListNode)} 反转链表
+     */
+    public void listTwoPointers() {
+    }
+
+    /**
+     * Description: 【链表递归技巧】是指在链表中使用递归算法解决问题的技巧。
+     * <p>
+     * 链表中递归技巧的主要应用场景有两类：
+     * 1、通过双指针技巧遍历链表，然后递归处理每个节点。参考 {@link DemoList_206#reverseList(ListNode)}
+     * 2、递归反转链表的每个节点，直到链表末尾，然后逐层返回新链表的头节点。
+     * <p>
+     * {@link DemoList_206#reverseList0(ListNode)} 反转链表
+     * {@link DemoList_92#reverseBetween(ListNode, int, int)} 反转链表 II
+     */
+    public void reserseList() {
     }
 }
