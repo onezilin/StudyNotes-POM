@@ -112,4 +112,21 @@ public class Demo {
      */
     public void reserseList() {
     }
+
+    /**
+     * Description: 【栈】是一种遵循后进先出（LIFO）原则的有序集合，插入和删除操作都在栈顶进行。
+     * <p>
+     * Java 中提供 Stack 类来实现栈的功能
+     * 栈的主要操作有：
+     * 1、入栈（push）：将元素压入栈顶。
+     * 2、出栈（pop）：弹出栈顶元素。
+     * 3、获取栈顶元素（peek）：获取栈顶元素，不弹出。
+     * <p>
+     * {@link DemoStack_20#isValid(String)} 有效的括号
+     * {@link DemoStack_496#nextGreaterElement(int[])} 下一个更大元素 I
+     * {@link DemoStack_503#nextGreaterElements(int[])} 下一个更大元素 II
+     * {@link DemoStack_739#dailyTemperatures(int[])} 每日温度
+     */
+    public void stack() {
+    }
 }
