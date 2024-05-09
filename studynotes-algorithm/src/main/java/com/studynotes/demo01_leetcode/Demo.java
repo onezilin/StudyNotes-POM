@@ -1,6 +1,8 @@
 package com.studynotes.demo01_leetcode;
 
 import com.studynotes.entity.ListNode;
+import com.studynotes.entity.Node;
+import com.studynotes.entity.TreeNode;
 
 /**
  * Description:
@@ -152,5 +154,45 @@ public class Demo {
      * {@link DemoLFU_460.LFUCache(int)} LFU 缓存机制
      */
     public void lruAndLfu() {
+    }
+
+    /**
+     * Description: 【二叉树】是每个节点最多有两个子树的树结构，通常称为左子树和右子树。
+     * <p>
+     * 二叉树的遍历方式主要有三种：
+     * 1、前序遍历（根左右）：根节点 -> 左子树 -> 右子树
+     * 2、中序遍历（左根右）：左子树 -> 根节点 -> 右子树
+     * 3、后序遍历（左右根）：左子树 -> 右子树 -> 根节点
+     * <p>
+     * 树的算法大多可以使用递归来解决，因为树的结构天然递归的特性。
+     * 切记：不要脑子进入递归，只要相信每次递归函数会按照我们的期望工作即可。
+     * <p>
+     * {@link DemoTree_226#invertTree(TreeNode)} 翻转二叉树
+     * {@link DemoTree_114#flatten(TreeNode)} 二叉树展开为链表
+     * {@link DemoTree_116#connect(Node)} 填充每个节点的下一个右侧节点指针
+     * {@link DemoTree_654#constructMaximumBinaryTree(int[])} 最大二叉树
+     * {@link DemoTree_105#buildTree(int[], int[])} 从前序与中序遍历序列构造二叉树
+     * {@link DemoTree_652#findDuplicateSubtrees(TreeNode)} 寻找重复的子树
+     * {@link DemoTree_297#serialize(TreeNode)} 二叉树的序列化与反序列化
+     */
+    public void tree() {
+    }
+
+    /**
+     * Description: 【二叉搜索树】是指一棵空树或者具有下列性质的二叉树：
+     * 1、左子树上所有节点的值均小于它的根节点的值。
+     * 2、右子树上所有节点的值均大于它的根节点的值。
+     * 3、以此类推，左、右子树也分别为二叉搜索树。
+     * <p>
+     * 二叉搜索树的中序遍历是升序序列。
+     * <p>
+     * {@link DemoBST_98#isValidBST(TreeNode)} 验证二叉搜索树
+     * {@link DemoBST_230#kthSmallest(TreeNode, int)} 二叉搜索树中第 K 小的元素
+     * {@link DemoBST_538#convertBST(TreeNode)} 把二叉搜索树转换为累加树
+     * {@link DemoBST_450#deleteNode(TreeNode, int)} 删除二叉搜索树中的节点
+     * {@link DemoBST_700#searchBST(TreeNode, int)} 二叉搜索树中的搜索
+     * {@link DemoBST_95#generateTrees(int)} 不同的二叉搜索树 II
+     */
+    public void bst() {
     }
 }
