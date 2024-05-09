@@ -129,4 +129,18 @@ public class Demo {
      */
     public void stack() {
     }
+
+    /**
+     * Description: 【队列】是一种遵循先进先出（FIFO）原则的有序集合，插入操作在队尾进行，删除操作在队首进行。
+     * <p>
+     * Java 中提供 Queue 接口来实现队列的功能，常用的实现类有 LinkedList、PriorityQueue 等。
+     * 队列的主要操作有：
+     * 1、入队（offer）：将元素插入队尾。
+     * 2、出队（poll）：删除队首元素。
+     * 3、获取队首元素（peek）：获取队首元素，不删除。
+     * <p>
+     * {@link DemoQueue_239#maxSlidingWindow(int[], int)} 滑动窗口最大值
+     */
+    public void queue() {
+    }
 }
