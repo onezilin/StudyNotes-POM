@@ -143,4 +143,14 @@ public class Demo {
      */
     public void queue() {
     }
+
+    /**
+     * Description:
+     * LRU 是 Least Recently Used 的缩写，即最近最少使用。
+     * {@link DemoLRU_146.LRUCache(int)} LRU 缓存机制
+     * LFU 是 Least Frequently Used 的缩写，即最近最不经常使用。
+     * {@link DemoLFU_460.LFUCache(int)} LFU 缓存机制
+     */
+    public void lruAndLfu() {
+    }
 }
