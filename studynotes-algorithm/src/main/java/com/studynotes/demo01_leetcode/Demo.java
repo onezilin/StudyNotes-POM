@@ -195,4 +195,44 @@ public class Demo {
      */
     public void bst() {
     }
+
+    /**
+     * Description: 【深度优先搜索/回溯算法】是一种搜索算法，它沿着树的深度遍历树的节点，尽可能深的搜索树的分支。
+     * <p>
+     * 1、深度优先搜索（DFS）：从根节点开始，沿着树的深度遍历树的节点，尽可能深的搜索树的分支。
+     * 2、回溯算法：在搜索过程中，当搜索到某一步时，如果发现某一步不满足条件，就退回一步重新选择，直到找到满足条件的路径。
+     * <p>
+     * 回溯算法的基本思想是：
+     * 1、从根节点开始，尝试所有可能的路径。
+     * 2、如果路径不满足条件，就退回一步，重新选择。
+     * 3、直到找到一条满足条件的路径，或者所有路径都试过了，算法结束。
+     * <p>
+     * {@link DemoDFS_51#solveNQueens(int)} 解 N 皇后问题
+     * {@link DemoDFS_698#canPartitionKSubsets(int[], int)} 划分为 k 个相等的子集
+     * {@link DemoDFS_200#numIslands(char[][])} 岛屿数量
+     * {@link DemoDFS_1254#closedIsland(int[][])} 统计封闭岛屿的数目
+     * {@link DemoDFS_695#maxAreaOfIsland(int[][])} 岛屿的最大面积
+     * {@link DemoDFS_1905#countSubIslands(int[][], int[][])} 统计子岛屿
+     * {@link DemoDFS_694#numDistinctIslands(int[][])} 不同的岛屿数量
+     */
+    public void dfs() {
+    }
+
+    /**
+     * Description: 【广度优先搜索/层次遍历算法】是一种搜索算法，它沿着树的宽度遍历树的节点，尽可能广的搜索树的分支。
+     * <p>
+     * 1、广度优先搜索（BFS）：从根节点开始，沿着树的宽度遍历树的节点，尽可能广的搜索树的分支。
+     * 2、层次遍历：从树的根节点开始，按照层次依次遍历树的节点。
+     * <p>
+     * 广度优先搜索算法的基本思想是：
+     * 1、从根节点开始，将根节点加入队列。
+     * 2、从队列中取出第一个节点，访问该节点，并将其所有未访问的子节点加入队列。
+     * 3、重复步骤 2，直到队列为空。
+     * <p>
+     * {@link DemoBFS_111#minDepth(TreeNode)} 二叉树的最小深度
+     * {@link DemoBFS_752#openLock(String[], String)} 打开转盘锁
+     * {@link DemoBFS_773#slidingPuzzle(int[][])} 滑动谜题
+     */
+    public void bfs() {
+    }
 }
