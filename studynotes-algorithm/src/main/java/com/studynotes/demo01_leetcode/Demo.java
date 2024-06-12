@@ -235,4 +235,41 @@ public class Demo {
      */
     public void bfs() {
     }
+
+    /**
+     * Description: DP 动态规划主要是用于【求最值】的题目中，通过【状态转移方程】来求解问题
+     * <p>
+     * 1、动态规划的核心思想是将原问题拆解成若干子问题，同时保存子问题的答案，使得每个子问题只求解一次，最终获得原问题的答案
+     * 2、动态规划和递归不同点在于：动态规划是自底向上，从最简单的答案开始获取最终结果；递归是自顶向下，逐步分解问题，直到最简单的答案。
+     * 3、动态规划一般脱离了递归，由循环迭代完成
+     * <p>
+     * 2、动态规划的一般步骤：
+     * 1）找到问题的【状态】和【选择】
+     * 2）明确【dp 数组/函数的定义】
+     * 3）明确【base case】
+     * 4）找到【状态转移方程】
+     * 5）【实现】并【优化】
+     * <p>
+     * {@link DemoDP_509#fib(int)} 斐波那契数列
+     * {@link DemoDP_322#coinChange(int[], int)} 零钱兑换
+     * {@link DemoDP_931#minFallingPathSum(int[][])} 下降路径最小和
+     * {@link DemoDP_300#lengthOfLIS(int[])} 最长上升子序列
+     * {@link DemoDP_53#maxSubArray(int[])} 最大子序和
+     * {@link DemoDP_1143#longestCommonSubsequence(String, String)} 最长公共子序列
+     * {@link DemoDP_72#minDistance(String, String)} 编辑距离
+     * {@link DemoDP_10#isMatch(String, String)} 正则表达式匹配
+     * {@link DemoDP_2548#maxPrice(int[], int[], int)} 背包问题
+     * {@link DemoDP_416#canPartition(int[])} 分割等和子集
+     * {@link DemoDP_121#maxProfit(int[])} 买卖股票的最佳时机
+     * {@link DemoDP_122#maxProfit(int[])} 买卖股票的最佳时机 II
+     * {@link DemoDP_123#maxProfit(int[])} 买卖股票的最佳时机 III
+     * {@link DemoDP_188#maxProfit(int, int[])} 买卖股票的最佳时机 IV
+     * {@link DemoDP_309#maxProfit(int[])} 最佳买卖股票时机含冷冻期
+     * {@link DemoDP_714#maxProfit(int[], int)} 买卖股票的最佳时机含手续费
+     * {@link DemoDP_198#rob(int[])} 打家劫舍
+     * {@link DemoDP_213#rob(int[])} 打家劫舍 II
+     * {@link DemoDP_337#rob(TreeNode)} 打家劫舍 III
+     */
+    private void dynamicProgramming() {
+    }
 }
